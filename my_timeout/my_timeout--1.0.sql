@@ -1,0 +1,36 @@
+\echo Use "CREATE EXTENSION my_timeout" to load this file. \quit
+
+CREATE FUNCTION my_register_timeout()
+RETURNS INT4
+AS 'MODULE_PATHNAME'
+LANGUAGE C STRICT;
+	
+CREATE FUNCTION my_enable_timeout_after(INT4)
+RETURNS bool
+AS 'MODULE_PATHNAME'
+LANGUAGE C STRICT;
+
+CREATE FUNCTION my_enable_timeout_at(INT4)
+RETURNS bool
+AS 'MODULE_PATHNAME'
+LANGUAGE C STRICT;
+	
+CREATE FUNCTION my_disable_timeout()
+RETURNS bool
+AS 'MODULE_PATHNAME'
+LANGUAGE C STRICT;
+
+CREATE FUNCTION my_get_timeout_indicator()
+RETURNS bool
+AS 'MODULE_PATHNAME'
+LANGUAGE C STRICT;
+	
+CREATE FUNCTION my_get_timeout_start_time()
+RETURNS timestamptz
+AS 'MODULE_PATHNAME'
+LANGUAGE C STRICT;
+	
+CREATE FUNCTION my_get_timeout_finish_time()
+RETURNS timestamptz
+AS 'MODULE_PATHNAME'
+LANGUAGE C STRICT;
